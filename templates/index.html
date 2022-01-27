@@ -12,8 +12,8 @@
 			ML classification of whether people in tech should be treated based
 			on the survey
 		</h1>
-
-		<form method="POST" action="http://127.0.0.1:5000/results.html">
+		<!-- http://127.0.0.1:5000/results.html -->
+		<form action="{{ url_for('predict')}}" method="POST">
 			<div class="userInput">
 				<div class="paramInput">
 					<p class="label">Age</p>

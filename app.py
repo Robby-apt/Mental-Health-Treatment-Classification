@@ -9,7 +9,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
-@app.route('/results.html', methods=['POST'])
+@app.route('/predict', methods=['POST','GET'])
 def predict():
     # for rendering results on index.html
     int_features = [int(x) for x in request.form.values()]
@@ -19,7 +19,7 @@ def predict():
     # output = round(prediction[0], 2)
     output = prediction[0]
 
-    return render_template('index.html', prediction_text = 'Should you seek treatment? $ {}'.format(output))
+    return render_template('results.html', prediction_text = 'Should you seek treatment? $ {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)

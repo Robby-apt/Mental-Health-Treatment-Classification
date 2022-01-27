@@ -1,5 +1,6 @@
 .vscode/
 .ipynb_checkpoints/
+.idea/
 
 .~lock.oil.csv#
 .~lock.Mental Health In Tech Documentation.docx#
