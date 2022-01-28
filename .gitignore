@@ -1,6 +1,7 @@
 .vscode/
 .ipynb_checkpoints/
 .idea/
+__pycache__/
 
 .~lock.oil.csv#
 .~lock.Mental Health In Tech Documentation.docx#
