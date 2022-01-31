@@ -1,0 +1,13 @@
+pandas >= 0.0.1
+numpy >= 0.0.1
+matplotlib >= 0.0.1
+seaborn >= 0.0.1
+plotly >= 0.0.1
+scipy >= 0.0.1
+math >= 0.0.1
+pickle >= 0.0.1
+warnings >= 0.0.1
+sklearn >= 0.0.1
+yellowbrick >= 0.0.1
+Flask >= 0.0.1
+gunicorn >= 0.0.1
