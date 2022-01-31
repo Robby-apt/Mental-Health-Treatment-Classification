@@ -6,7 +6,7 @@ plotly
 scipy
 # math
 # pickle
-warnings
+# warnings
 sklearn
 yellowbrick
 Flask
