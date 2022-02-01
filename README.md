@@ -11,6 +11,6 @@ The steps followed are as follows:
     > Rebuilding the models and crossvalidating again
     > Hyper-parameter tuning
 
-The project is deployed using flask and can be found on (site)
+The project is deployed using flask and can be found on https://mental-health-in-tech-ml.herokuapp.com/
 
 Hope you enjoy :)
