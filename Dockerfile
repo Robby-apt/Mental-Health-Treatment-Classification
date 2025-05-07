@@ -1,15 +1,20 @@
-FROM node:18
+# Use an official Python image
+FROM python:3.11-slim
 
+# Set working directory
 WORKDIR /app
 
-# Copy package.json from the subfolder
-COPY package*.json ./
+# Copy dependencies file
+COPY requirements.txt ./
 
-RUN npm install
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the backend code
-COPY backend/. .
+# Copy app code into the container
+COPY . .
 
-EXPOSE 3000
+# Expose the port your app runs on (usually 5000)
+EXPOSE 5000
 
-CMD ["npm", "start"]
+# Start the app
+CMD ["python", "app.py"]
