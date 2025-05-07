@@ -1,27 +1,18 @@
-# Use official Python base image
-FROM python:3.11-slim
+# Use the official lightweight Python image
+FROM python:3.10-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Python dependencies
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
+# Copy the rest of the app's code
 COPY . .
 
-# Expose the Flask port
+# Expose the port that the app runs on
 EXPOSE 5000
 
-# Use gunicorn to run the app (replace 'app:app' with your entry point)
+# Run the app with gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
