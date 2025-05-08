@@ -1,14 +1,14 @@
-pandas
+Flask
+gunicorn
 numpy
+pandas
+scikit-learn
 matplotlib
 seaborn
 plotly
 scipy
+yellowbrick
 # math
 # pickle
 # warnings
 # sklearn
-scikit-learn
-yellowbrick
-Flask
-gunicorn
