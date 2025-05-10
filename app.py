@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Get the absolute path to the model file
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(current_dir, 'mental_health_model.pkl')
+model_path = os.path.join(current_dir, 'model.pkl')
 
 print("Current directory:", os.getcwd())
 print("Files in directory:", os.listdir('.'))
