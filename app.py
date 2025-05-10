@@ -1,12 +1,24 @@
-import joblib  # <-- Add this line!
 import os
-model_path = os.path.join(os.path.dirname(__file__), 'mental_health_model.pkl')
-model = joblib.load(model_path)  # Now 'joblib' is defined!
+import joblib
 import numpy as np
 from flask import Flask,request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
+
+# Get the absolute path to the model file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'mental_health_model.pkl')
+
+print("Current directory:", os.getcwd())
+print("Files in directory:", os.listdir('.'))
+print("Model path:", model_path)
+
+# Verify the file exists before trying to load it
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at: {model_path}")
+
+model = joblib.load(model_path)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
