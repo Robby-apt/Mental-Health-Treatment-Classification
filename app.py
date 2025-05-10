@@ -10,10 +10,6 @@ app = Flask(__name__)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(current_dir, 'model.pkl')
 
-print("Current directory:", os.getcwd())
-print("Files in directory:", os.listdir('.'))
-print("Model path:", model_path)
-
 # Verify the file exists before trying to load it
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file not found at: {model_path}")
