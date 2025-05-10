@@ -1,9 +1,11 @@
+import os
 import numpy as np
 from flask import Flask,request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model_path = os.path.join(os.path.dirname(__file__), 'mental_health_model.pkl')
+model = joblib.load(model_path)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
